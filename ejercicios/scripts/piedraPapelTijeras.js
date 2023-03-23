@@ -1,117 +1,85 @@
-let listaProductos = [
-  {
-    nombreProducto: "Hidratante facial",
-    precio: 3500,
-    categoria: "Hidratante",
-  },
-  { nombreProducto: "Tonico exfoliante", precio: 2350.45, categoria: "Tonico" },
-  {
-    nombreProducto: "Protector solar factor 50",
-    precio: 3300,
-    categoria: "Protector solar",
-  },
-  {
-    nombreProducto: "Protector solar toque seco factor 50",
-    precio: 4100,
-    categoria: "Protector solar",
-  },
-  {
-    nombreProducto: "Protector solar con color factor 50",
-    precio: 3850.5,
-    categoria: "Protector solar",
-  },
-  {
-    nombreProducto: "Gel de limpieza facial",
-    precio: 1740.99,
-    categoria: "Limpieza",
-  },
-  { nombreProducto: "Tonico hidratante", precio: 1250.99, categoria: "Tonico" },
-  { nombreProducto: "Sérum hidratante", precio: 4250.99, categoria: "Sérum" },
-  {
-    nombreProducto: "Exfoliante de azúcar cherry",
-    precio: 1200,
-    categoria: "Labios",
-  },
-  {
-    nombreProducto: "Pads de hidrogel para contorno de ojos",
-    precio: 2800,
-    categoria: "Ojos",
-  },
-  {
-    nombreProducto: "Mascarilla facial",
-    precio: 3250.99,
-    categoria: "Mascaras",
-  },
-  { nombreProducto: "Sérum facial con PHA", precio: 3200, categoria: "Sérum" },
-  { nombreProducto: "Bálsamo labial", precio: 3200, categoria: "Labios" },
-  { nombreProducto: "Crema contorno de ojos", precio: 3200, categoria: "Ojos" },
-  {
-    nombreProducto: "Protector solar en barra",
-    precio: 3800,
-    categoria: "Protector solar",
-  },
-  {
-    nombreProducto: "Mascara de hidratación y reparación",
-    precio: 1200,
-    categoria: "Mascaras",
-  },
-  { nombreProducto: "Agua micellar", precio: 2890, categoria: "Limpieza" },
-];
-document.write(`LISTA DE PRODCUTOS POR NOMBRE DEL ARRAY`);
-document.write(`<br>`);
-// se puede usar foreach
-function mostrar(array) {
-  document.write(`<table>`);
-  document.write(`<tr>`);
+//PIEDRA PAPEL O TIJERAS
+/*
+Piedra-papel-tijera 👊🏻 ✋🏻 ✌🏻 :crear un script (en el repo de conceptos de JS o realizar un nuevo repo) con toda la logica 
+necesaria que solicite al usuario un movimiento (piedra - papel - tijera) la PC elija aleatoriamente un movimiento y 
+al final mostrar por pantalla quien gano, luego preguntar si queremos jugar otra vez.
+*/
+const num = (min, max) => {
+  return Math.floor(Math.random() * (max - min)) + min;
+};
 
-  document.write(`<th>`);
-  document.write(`Nombre`);
-  document.write(`</th>`);
-  document.write(`<th>`);
-  document.write(`categoria`);
-  document.write(`</th>`);
-  document.write(`<th>`);
-  document.write(`precio`);
-  document.write(`</th>`);
+let aleatorio = num(1, 4);
+let resultado = (resultadoPosible) => {
+  switch (resultadoPosible) {
+    case `1`:
+      document.write(`<br>`);
+      document.write(`jugada: elegiste piedra`);
+      document.write(`<br>`);
+      if (aleatorio == 1) {
+        document.write(`el resultado contra tu rival fue: `);
+        document.write(`<br>`);
+        document.write(`piedra y piedra empate!`);
+      } else if (aleatorio == 2) {
+        document.write(`perdiste :( te gano la compu xd`);
+        document.write(`<br>`);
+        document.write(`el papel le gana a la piedra`);
+      } else if (aleatorio == 3) {
+        document.write(`perdiste :( te gano la compu xd`);
+        document.write(`<br>`);
+        document.write(`la tijera pierde contra la piedra`);
+      } else {
+        document.write(`ingrese un numero valido`);
+      }
+      break;
+    case `2`:
+      document.write(`<br>`);
+      document.write(`jugada: elegiste papel`);
+      document.write(`<br>`);
+      if (aleatorio == 1) {
+        document.write(`el resultado contra tu rival fue: `);
+        document.write(`<br>`);
+        document.write(`piedra y papel gana papel`);
+      } else if (aleatorio == 2) {
+        document.write(`empate`);
+        document.write(`<br>`);
+        document.write(`papel y papel`);
+      } else if (aleatorio == 3) {
+        document.write(`perdiste :( te gano la compu xd`);
+        document.write(`<br>`);
+        document.write(`la tijera corta el papel`);
+      } else {
+        document.write(`ingrese un numero valido`);
+      }
+      break;
+    case `3`:
+      document.write(`<br>`);
+      document.write(`jugada: elegiste tijeras`);
+      document.write(`<br>`);
+      if (aleatorio == 1) {
+        document.write(`el resultado contra tu rival fue: `);
+        document.write(`<br>`);
+        document.write(`piedra gana a tijeras :(`);
+      } else if (aleatorio == 2) {
+        document.write(`ganaste pa`);
+        document.write(`<br>`);
+        document.write(`tijeras gana papel`);
+      } else if (aleatorio == 3) {
+        document.write(`empate`);
+        document.write(`<br>`);
+        document.write(`la tijera contra tijera`);
+      } else {
+        document.write(`ingrese un numero valido`);
+      }
+      break;
+    default:
+      document.write(`igrese jugada valida`);
+      break;
+  }
+};
+// preguntar.
+alert(`F5 para reinicar`);
+const inputJugar = confirm(`desea jugar ?`);
+let input = prompt(`ingrese jugada= 1-piedra 2-papel 3-tijeras`);
 
-  document.write(`</tr>`);
-  document.write(`<td>`);
-  const lista = array.map((elementos) =>
-    document.write(`<br> ${elementos.nombreProducto}`)
-  );
-  document.write(`</td>`);
-  document.write(`<td>`);
-  const lista2 = array.map((elementos) =>
-    document.write(`<br> ${elementos.categoria}`)
-  );
-  document.write(`</td>`);
-  document.write(`<td>`);
-  const lista3 = array.map((elementos) =>
-    document.write(`<br> ${elementos.precio}`)
-  );
-  document.write(`</td>`);
-  document.write(`</tr>`);
-  document.write(`</table>`);
-}
-
-mostrar(listaProductos);
-
-let arregloFiltrado = listaProductos.filter((p) =>
-  p.categoria.includes(`Protector solar`)
-);
-//console.log(arregloFiltrado);
-mostrar(arregloFiltrado);
-
-//preguntar en clase
-let encontrar = listaProductos.find((p) => p.nombreProducto.includes(`Sérum`));
-let aux = [];
-aux.push(encontrar);
-//console.log(encontrar);
-console.log(aux);
-mostrar(aux);
-
-let existePeli = listaProductos.includes("Bruma")
-  ? "Si encontramos la Bruma y existe"
-  : "No encontramos la Bruma no existe";
-document.write(`<br>`);
-document.write(existePeli);
+resultado(input);
+//document.write(`${num(1,4)}`)
