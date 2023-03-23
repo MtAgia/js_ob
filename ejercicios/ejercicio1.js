@@ -3,7 +3,7 @@
 marca, modelo y si está encendido o apagado. Crea los métodos necesarios para permitir encender y 
 apagar el auto.
 */
-
+//this hace referencia a el objeto en este caso. Pero this puede variar su valor
 let auto = {
     color: `azul`,
     marca: `BMW`,
