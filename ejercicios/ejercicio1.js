@@ -7,7 +7,7 @@ apagar el auto.
 let auto = {
     color: `azul`,
     marca: `BMW`,
-    modelo: `a4`,
+    modelo: `m2`,
     //metodos
     encendido: function (){
         document.write(`el auto ${this.marca} ${this.modelo} esta encendido <br>`)
