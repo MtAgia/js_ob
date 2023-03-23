@@ -3,11 +3,11 @@
 marca, modelo y si está encendido o apagado. Crea los métodos necesarios para permitir encender y 
 apagar el auto.
 */
-
+//this hace referencia a el objeto en este caso. Pero this puede variar su valor
 let auto = {
     color: `azul`,
     marca: `BMW`,
-    modelo: `a4`,
+    modelo: `m2`,
     //metodos
     encendido: function (){
         document.write(`el auto ${this.marca} ${this.modelo} esta encendido <br>`)
