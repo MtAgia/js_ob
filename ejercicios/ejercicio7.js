@@ -23,3 +23,4 @@ seleccionadas por el usuario se pueden mostrar en pantalla y  por consola.
 */
 
 
+//preguntar en clase
